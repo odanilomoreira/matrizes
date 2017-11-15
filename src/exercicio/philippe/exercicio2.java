@@ -52,7 +52,7 @@ public class exercicio2 {
 		rand.setSeed(System.currentTimeMillis());
 		for (i=0;i<3;i++) {
 			for (j=0;j<3;j++) {
-					Integer r = rand.nextInt(2);
+					Integer r = rand.nextInt(30)+1;
 					M[i][j] = r;
 			}
 		}
