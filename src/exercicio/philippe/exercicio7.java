@@ -24,7 +24,15 @@ public class exercicio7 {
 	
 	
 	public static int exponencial(int a, int b) {
-		return (int) Math.pow(a, b);
+		if (b==0)
+			return 1;
+		else {
+			int aux = exponencial(a,b/2);
+			if (b % 2 == 0)
+				return aux * aux;
+			else 
+				return aux * aux * a;
+		}
 	}
 
 }
