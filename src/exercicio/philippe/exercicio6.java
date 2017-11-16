@@ -1,11 +1,19 @@
 package exercicio.philippe;
 
+import java.util.Scanner;
+
 public class exercicio6 {
 
 	public static void main(String[] args) {
 		
-		int resultado = fatorial(4);
-		System.out.println(resultado);
+		System.out.println("\nEntre com um valor: ");
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		
+		input.close();
+		
+		int resultado = fatorial(n);
+		System.out.println("\nO fatorial de "+n+" é : "+resultado);
 		
 	}
 	
