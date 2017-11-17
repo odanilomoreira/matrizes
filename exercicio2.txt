@@ -1,0 +1,19 @@
+
+Matriz (M): 
+21	27	12	
+13	19	26	
+7	18	14	
+
+
+Matriz Transposta (Mt): 
+21	13	7	
+27	19	18	
+12	26	14	
+
+
+Matriz Resultado (mRes = M x Mt): 
+876	702	479	
+1296	1180	783	
+1122	1014	748	
+
+A matriz não é Ortogonal

@@ -1,48 +1,60 @@
 package exercicio.philippe;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Random;
 
 public class exercicio2 {
-
-	public static void main(String[] args) {
+	public static FileWriter arq;
+	public static PrintWriter gravarArq;
+	
+	
+	public static void main(String[] args) throws IOException {
 
 		int M[][] = new int [3][3];
 		int Mt[][] = new int [3][3];
 		int mRes[][] = new int [3][3];
 		int valida;
+		
+		arq = new FileWriter("C:\\Users\\Isabela\\eclipse-workspace\\Matrizes\\exercicio2.txt");
+	    gravarArq = new PrintWriter(arq);
 
 		geraMatriz(M);
-		System.out.print("\nMatriz (M): \n");
+		gravarArq.printf("\nMatriz (M): \n");
 		imprimeMatriz(M);
 		
 		Mt = M;
 		matrizTrans(Mt);
-		System.out.println();
-		System.out.print("\nMatriz Transposta (Mt): \n");
+		gravarArq.println();
+		gravarArq.printf("\nMatriz Transposta (Mt): \n");
 		imprimeMatriz(Mt);
 		
-		System.out.println();
+		gravarArq.println();
 		
 		mRes = multiplicaMat(M,Mt);
-		System.out.print("\nMatriz Resultado (mRes = M x Mt): \n");
+		gravarArq.printf("\nMatriz Resultado (mRes = M x Mt): \n");
 		imprimeMatriz(mRes);
 		
 		valida = verificaOrtogonal(mRes);
 		
 		if (valida==1)
-			System.out.println("\nA matriz é Ortogonal");
+			gravarArq.println("\nA matriz é Ortogonal");
 		else
-			System.out.println("\nA matriz não é Ortogonal");
+			gravarArq.println("\nA matriz não é Ortogonal");
 	
+		System.out.print("Arquivo Gerado com Sucesso!");
+		
+		arq.close();
 	}
 	
 	public static void imprimeMatriz(int M[][]){
 		int i,j;
 		for (i=0;i<3;i++) {
 			for (j=0;j<3;j++) {
-					System.out.print(M[i][j]+"\t");
+				gravarArq.printf(M[i][j]+"\t");
 			}
-			System.out.println();
+			gravarArq.println();
 		}
 	}
 	
